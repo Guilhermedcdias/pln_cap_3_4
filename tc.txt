@@ -1,0 +1,32 @@
+Léxico do Modelo
+O léxico do modelo é o conjunto de todas as palavras únicas presentes no corpus, após o pré-processamento. 
+
+- Frase 1: "Eu não gostei do produto e o produto parece ruim."
+- Frase 2: "O produto parece bom."
+- Frase 3: "O produto parece ruim."
+
+Após tokenização e remoção de duplicatas, o léxico consiste em:
+
+Léxico = {"eu", "não", "gostei", "do", "produto", "e", "o", "parece", "ruim", "bom"}
+
+
+1. Unigramas (n=1)
+Cada unigram é uma única palavra do léxico. O vetor de características para cada frase é representado pela 
+frequência das palavras no léxico:
+- Frase 1: [1, 1, 1, 2, 2, 1, 1, 1, 1, 0]
+- Frase 2: [0, 0, 0, 1, 1, 0, 1, 1, 0, 1]
+- Frase 3: [0, 0, 0, 1, 1, 0, 1, 1, 1, 0]
+
+2. Bigramas (n=2)
+Cada bigrama é uma sequência de duas palavras consecutivas:
+- Frase 1: ["eu não", "não gostei", "gostei do", "do produto", "produto e", "e o", "o produto", "produto parece", "parece ruim"]
+- Frase 2: ["o produto", "produto parece", "parece bom"]
+- Frase 3: ["o produto", "produto parece", "parece ruim"]
+
+3. Trigramas (n=3)
+Cada trigram é uma sequência de três palavras consecutivas:
+- Frase 1: ["eu não gostei", "não gostei do", "gostei do produto", "do produto e", "produto e o", "e o produto", 
+"o produto parece", "produto parece ruim"]
+
+- Frase 2: ["o produto parece", "produto parece bom"]
+- Frase 3: ["o produto parece", "produto parece ruim"]
